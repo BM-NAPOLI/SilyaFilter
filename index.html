@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SILYA - Image Filter Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation"></div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle-container">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <span class="toggle-switch"></span>
+        </button>
+        <span class="theme-label" id="themeLabel">Dark Mode</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header with Logo and Title -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <span class="logo-text">SILYA</span>
+                </div>
+                <span class="logo-subtitle">Image Artistry</span>
+            </div>
+            <h1 class="main-title">
+                <span class="title-text"></span>
+                <span class="title-cursor"></span>
+            </h1>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Image Preview Section -->
+            <section class="image-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-placeholder" id="uploadPlaceholder">
+                        <div class="upload-icon">📷</div>
+                        <h3>Upload Your Image</h3>
+                        <p>Drag & drop or click to select</p>
+                    </div>
+                    <img id="previewImage" class="preview-image" style="display: none;">
+                </div>
+                <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                <div class="loading-animation" id="loadingAnimation" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Processing image...</p>
+                </div>
+            </section>
+
+            <!-- Filters Control Panel -->
+            <section class="filters-section">
+                <h2 class="filters-title">Filter Controls</h2>
+
+                <div class="filters-grid">
+                    <!-- Brightness -->
+                    <div class="filter-group">
+                        <label for="brightness">
+                            <span class="filter-label">Brightness</span>
+                            <span class="filter-value" id="brightnessValue">100</span>
+                        </label>
+                        <div class="slider-track">
+                            <input type="range" id="brightness" min="0" max="200" value="100" class="slider">
+                            <div class="slider-fill"></div>
+                        </div>
+                    </div>
+
+                    <!-- Contrast -->
+                    <div class="filter-group">
+                        <label for="contrast">
+                            <span class="filter-label">Contrast</span>
+                            <span class="filter-value" id="contrastValue">100</span>
+                        </label>
+                        <div class="slider-track">
+                            <input type="range" id="contrast" min="0" max="200" value="100" class="slider">
+                            <div class="slider-fill"></div>
+                        </div>
+                    </div>
+
+                    <!-- Saturation -->
+                    <div class="filter-group">
+                        <label for="saturate">
+                            <span class="filter-label">Saturation</span>
+                            <span class="filter-value" id="saturateValue">100</span>
+                        </label>
+                        <div class="slider-track">
+                            <input type="range" id="saturate" min="0" max="200" value="100" class="slider">
+                            <div class="slider-fill"></div>
+                        </div>
+                    </div>
+
+                    <!-- Blur -->
+                    <div class="filter-group">
+                        <label for="blur">
+                            <span class="filter-label">Blur</span>
+                            <span class="filter-value" id="blurValue">0</span>
+                        </label>
+                        <div class="slider-track">
+                            <input type="range" id="blur" min="0" max="20" step="0.5" value="0" class="slider">
+                            <div class="slider-fill"></div>
+                        </div>
+                    </div>
+
+                    <!-- Grayscale -->
+                    <div class="filter-group">
+                        <label for="grayscale">
+                            <span class="filter-label">Grayscale</span>
+                            <span class="filter-value" id="grayscaleValue">0</span>
+                        </label>
+                        <div class="slider-track">
+                            <input type="range" id="grayscale" min="0" max="100" value="0" class="slider">
+                            <div class="slider-fill"></div>
+                        </div>
+                    </div>
+
+                    <!-- Sepia -->
+                    <div class="filter-group">
+                        <label for="sepia">
+                            <span class="filter-label">Sepia</span>
+                            <span class="filter-value" id="sepiaValue">0</span>
+                        </label>
+                        <div class="slider-track">
+                            <input type="range" id="sepia" min="0" max="100" value="0" class="slider">
+                            <div class="slider-fill"></div>
+                        </div>
+                    </div>
+
+                    <!-- Hue Rotate -->
+                    <div class="filter-group">
+                        <label for="hueRotate">
+                            <span class="filter-label">Hue Rotate</span>
+                            <span class="filter-value" id="hueRotateValue">0°</span>
+                        </label>
+                        <div class="slider-track">
+                            <input type="range" id="hueRotate" min="0" max="360" value="0" class="slider">
+                            <div class="slider-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="downloadBtn" disabled>
+                        <span>💾</span> Download
+                    </button>
+                    <button class="btn btn-secondary" id="resetBtn" disabled>
+                        <span>🔄</span> Reset
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>✨ JUST FOR YOU BB SILYA ALHBILA DYALI ✨</p>
+        <p class="footer-copyright">© 2026 SILYA - Image Filter Editor | Crafted with 💖</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
